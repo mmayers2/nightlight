@@ -1,0 +1,64 @@
+{% extends 'listings/base.html' %}
+
+{% block body %}
+          <main class="mdl-layout__content" id="listings">
+              <input class="search" placeholder="Search" />
+              <div class=" mdl-layout__tab-panel is-active" id="overview">
+                <ul style="  list-style-type: none" class="list">
+                {% for listing in all_listings %}
+                    <li>
+                    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                        <div class="mdl-card mdl-cell mdl-cell--12-col">
+                          <div class="mdl-card__supporting-text">
+                            <h4 class="artist">{{ listing.artist }}</h4>
+                                 <div>{{ listing.date }}</div>
+                                 <div>{{ listing.venue }}</div>
+                                 <div>{{ listing.genre }}</div>
+
+                          </div>
+                        </div>
+                    </section>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+          </main>
+        <button id="filter-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Filter
+
+        </button>
+
+
+
+<ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+    data-mdl-for="filter-button">
+  <li class="mdl-menu__item">Rock</li>
+  <li class="mdl-menu__item">Another Action</li>
+  <li disabled class="mdl-menu__item">Disabled Action</li>
+  <li class="mdl-menu__item">Yet Another Action</li>
+</ul>
+
+
+<div id="users">
+
+  <ul class="list">
+    <li>
+      <h3 class="name">Jonny Stromberg</h3>
+      <p class="born">1986</p>
+    </li>
+    <li>
+      <h3 class="name">Jonas Arnklint</h3>
+      <p class="born">1985</p>
+    </li>
+    <li>
+      <h3 class="name">Martina Elm</h3>
+      <p class="born">1986</p>
+    </li>
+    <li>
+      <h3 class="name">Gustaf Lindqvist</h3>
+      <p class="born">1983</p>
+    </li>
+  </ul>
+
+</div>
+{%  endblock %}
+
